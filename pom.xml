@@ -15,6 +15,13 @@
 
 		<app.runtime>4.4.0-20230320</app.runtime>
 		<mule.maven.plugin.version>3.8.2</mule.maven.plugin.version>
+		<username>sathya_oct2023</username>
+		<password>Sathya_oct2023</password>
+		<cloudhub.application.name>hello-world-api-ssankar</cloudhub.application.name>
+		<environment>Sandbox</environment>
+		<region>us-east-1</region>
+		<workers>1</workers>
+		<workerType>Small</workerType>
 	</properties>
 
 	<build>
@@ -27,12 +34,24 @@
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<version>3.8.7</version>
+				<version>3.8.2</version>
 				<extensions>true</extensions>
 				<configuration>
-					<classifier>mule-application</classifier>
+				    <cloudHubDeployment>
+				      <uri>https://anypoint.mulesoft.com</uri>
+				      <muleVersion>${app.runtime}</muleVersion>
+				      <username>${username}</username>
+				      <password>${password}</password>
+				      <applicationName>${cloudhub.application.name}</applicationName>
+ 				      <environment>${environment}</environment>
+ 				      <region>${region}</region>
+				      <workers>${workers}</workers>
+				      <workerType>${workerType}</workerType>
+				      <properties>
+				      </properties>
+				    </cloudHubDeployment>
 				</configuration>
-			</plugin>
+  			</plugin>
 		</plugins>
 	</build>
 
@@ -46,7 +65,7 @@
 		<dependency>
 			<groupId>org.mule.connectors</groupId>
 			<artifactId>mule-http-connector</artifactId>
-			<version>1.8.0</version>
+			<version>1.7.3</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
 	</dependencies>
