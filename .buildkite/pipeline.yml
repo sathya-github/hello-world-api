@@ -1,3 +1,5 @@
+env:
+  ECHO_VAL: "Hello World"
 steps:
   - label: ":maven: :package:"
     command: mvn clean deploy -DmuleDeploy
@@ -7,8 +9,8 @@ steps:
           run: maven
           config: .buildkite/docker-compose.yml
   - label: "List dir"
-    command: echo "$(pwd)"
-    plugins:
-      - docker-compose#v1.5.2:
-          run: alpine
-          config: .buildkite/docker-compose.yml
+    command: echo $ECHO_VAL
+    # plugins:
+    #   - docker-compose#v1.5.2:
+    #       run: alpine
+    #       config: .buildkite/docker-compose.yml
