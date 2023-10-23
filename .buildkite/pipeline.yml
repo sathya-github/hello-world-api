@@ -5,5 +5,12 @@ steps:
     command: mvn clean deploy -DmuleDeploy
     artifact_paths: "target/*.jar"
     plugins:
-      - docker#v5.9.0:
-          image: maven:3.8.4-jdk-8
+      - docker-compose#v1.5.2:
+          run: maven
+          config: .buildkite/docker-compose.yml
+  - label: "List dir"
+    command: echo $ECHO_VAL
+    plugins:
+      - docker-compose#v1.5.2:
+          run: alpine
+          config: .buildkite/docker-compose.yml
