@@ -4,11 +4,11 @@ steps:
     artifact_paths: "target/*.jar"
     plugins:
       - docker-compose#v1.5.2:
-        run: maven
-        config: .buildkite/docker-compose.yml
+          run: maven
+          config: .buildkite/docker-compose.yml
   - label: "List dir"
     command: ls -l
     plugins:
       - docker-compose#v1.5.2:
-        run: alpine
-        config: .buildkite/docker-compose.yml
+          run: alpine
+          config: .buildkite/docker-compose.yml
