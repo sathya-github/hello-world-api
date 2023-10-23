@@ -1,4 +1,5 @@
 version: "3"
+
 services:
   maven:
     # Run pre-built maven image from docker library
