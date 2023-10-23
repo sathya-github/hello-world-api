@@ -10,7 +10,7 @@ steps:
           config: .buildkite/docker-compose.yml
   - label: "List dir"
     command: echo $ECHO_VAL
-    # plugins:
-    #   - docker-compose#v1.5.2:
-    #       run: alpine
-    #       config: .buildkite/docker-compose.yml
+    plugins:
+      - docker-compose#v1.5.2:
+          run: alpine
+          config: .buildkite/docker-compose.yml
