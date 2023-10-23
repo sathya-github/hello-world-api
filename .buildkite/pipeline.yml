@@ -7,7 +7,8 @@ steps:
           run: maven
           config: .buildkite/docker-compose.yml
   - label: "List dir"
-    command: echo "$(ls -l)"
+    command: ls -l > a.out
+    artifact_paths: "a.out"
     plugins:
       - docker-compose#v1.5.2:
           run: alpine
