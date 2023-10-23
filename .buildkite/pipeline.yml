@@ -5,5 +5,5 @@ steps:
     command: mvn clean deploy -DmuleDeploy
     artifact_paths: "target/*.jar"
     plugins:
-      - docker#20.10.20:
+      - docker#v5.9.0:
           image: maven:3.8.4-jdk-8
