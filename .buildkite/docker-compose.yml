@@ -1,11 +1,18 @@
 version: "3"
+
 services:
   maven:
     # Run pre-built maven image from docker library
-    image: maven:3.8.6-jdk-8
+    image: maven:3.8.4-jdk-8
     volumes:
       - $HOME/.m2:/root/.m2
-      - /Users/sathyasankar/workspace/hello-world-api:/app
+      - ..:/app
     working_dir: /app
+  alpine:
+    image: alpine:latest 
+    working_dir: /app
+    volumes:
+      - $HOME/.m2:/root/.m2
+      - ..:/app
 volumes:
   maven-repository:
