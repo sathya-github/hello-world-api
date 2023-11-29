@@ -3,4 +3,7 @@ steps:
     command: "echo 'Hello World'"
 
   - label: "Container Step"
-    command: "echo 'step that should run in the container'"
+    command: "pipeline"
+    plugins:
+      - docker#v5.9.0:
+          image: "sathyadocker/pipeline-builder:latest"
