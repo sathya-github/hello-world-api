@@ -3,4 +3,4 @@ steps:
     command: "echo 'Hello World'"
 
   - label: "Container Step"
-    command: "step that should run in the container"
+    command: "echo 'step that should run in the container'"
