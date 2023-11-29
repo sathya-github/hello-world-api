@@ -1,3 +1,6 @@
 steps:
-  - label: ":maven: :package:"
+  - label: "Echo Step"
     command: "echo 'Hello World'"
+
+  - label: "Container Step"
+    command: "step that should run in the container"
