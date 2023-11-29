@@ -3,7 +3,8 @@ steps:
     command: "echo 'Hello World'"
 
   - label: "Container Step"
-    command: "pipeline"
     plugins:
       - docker#v5.9.0:
           image: "sathyadocker/pipeline-builder:latest"
+          always-pull: true
+          command: ["pipeline"]
